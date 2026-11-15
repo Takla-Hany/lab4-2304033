@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="todo-header">
+    <h2 style="border: none; margin: 0; padding: 0;">F2.3 Library Reports</h2>
+</div>
+
+<h3>(a) Books & Average Price per Category</h3>
+<table>
+    <tr>
+        <th>Category</th>
+        <th>Number of Books</th>
+        <th>Average Price</th>
+    </tr>
+    {% for row in category_stats %}
+    <tr>
+        <td>{{ row.category_name }}</td>
+        <td>{{ row.book_count }}</td>
+        <td>${{ "%.2f"|format(row.avg_price or 0) }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<h3>(b) Authors with at Least 2 Books</h3>
+<table>
+    <tr>
+        <th>Author ID</th>
+        <th>Author Name</th>
+        <th>Books Written</th>
+    </tr>
+    {% for author in prolific_authors %}
+    <tr>
+        <td>{{ author.author_id }}</td>
+        <td>{{ author.author_name }}</td>
+        <td>{{ author.book_count }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<h3>(c) Whole Library Price Summary</h3>
+<table>
+    <tr>
+        <th>Total Price</th>
+        <th>Smallest Price</th>
+        <th>Largest Price</th>
+    </tr>
+    <tr>
+        <td>${{ "%.2f"|format(library_summary.total_price or 0) }}</td>
+        <td>${{ "%.2f"|format(library_summary.min_price or 0) }}</td>
+        <td>${{ "%.2f"|format(library_summary.max_price or 0) }}</td>
+    </tr>
+</table>
+{% endblock %}

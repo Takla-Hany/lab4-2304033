@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-Do App</title>
+    <title>To-Do & Library App</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
@@ -13,8 +13,21 @@
 
         {% block content %}{% endblock %}
 
-        <div style="margin-top: 30px; text-align: center; border-top: 1px solid #cbd5e1; padding-top: 15px;">
-            <a href="/">To-Do App (Lab 2)</a> | <a href="/library">Library System (Lab 3)</a>
+        <div
+            style="margin-top: 30px; text-align: center; border-top: 1px solid #cbd5e1; padding-top: 15px; line-height: 1.8;">
+            <div>
+                <a href="/">To-Do App (Lab 2)</a> |
+                <a href="/library">Library CRUD (Lab 3)</a>
+            </div>
+            <div style="margin-top: 5px; font-size: 0.9em;">
+                <strong>Lab 4 Pages:</strong>
+                <a href="/search">F2.1 Search</a> |
+                <a href="/catalogue">F2.2 Catalogue</a> |
+                <a href="/reports">F2.3 Reports</a> |
+                <a href="/loans">F2.4 Loans</a> |
+                <a href="/most_borrowed">F2.5 Most Borrowed</a> |
+                <a href="/authors_books">F2.6 Authors & Books</a>
+            </div>
         </div>
 
     </div>

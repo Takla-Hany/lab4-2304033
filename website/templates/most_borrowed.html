@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="todo-header">
+    <h2 style="border: none; margin: 0; padding: 0;">F2.5 Most Borrowed</h2>
+</div>
+
+<h3>Top 3 Books with the Most Loans</h3>
+<table>
+    <tr>
+        <th>Book ID</th>
+        <th>Title</th>
+        <th>Total Loans</th>
+    </tr>
+    {% for book in top_books %}
+    <tr>
+        <td>{{ book.book_id }}</td>
+        <td>{{ book.title }}</td>
+        <td>{{ book.loan_count }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<h3>Member with the Most Loans</h3>
+<table>
+    <tr>
+        <th>Member ID</th>
+        <th>Member Name</th>
+        <th>Total Loans</th>
+    </tr>
+    {% if top_member %}
+    <tr>
+        <td>{{ top_member.member_id }}</td>
+        <td>{{ top_member.name }}</td>
+        <td>{{ top_member.loan_count }}</td>
+    </tr>
+    {% endif %}
+</table>
+{% endblock %}

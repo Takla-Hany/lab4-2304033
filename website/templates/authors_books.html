@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="todo-header">
+    <h2 style="border: none; margin: 0; padding: 0;">F2.6 Authors & Books</h2>
+</div>
+
+<h3>(a) Every Author and Number of Books Written (Including 0)</h3>
+<table>
+    <tr>
+        <th>Author ID</th>
+        <th>Author Name</th>
+        <th>Country</th>
+        <th>Book Count</th>
+    </tr>
+    {% for author in authors_count %}
+    <tr>
+        <td>{{ author.author_id }}</td>
+        <td>{{ author.name }}</td>
+        <td>{{ author.country }}</td>
+        <td>{{ author.book_count }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<h3>(b) Books Where Author and Publisher Share the Same Country</h3>
+<table>
+    <tr>
+        <th>Book ID</th>
+        <th>Book Title</th>
+        <th>Author</th>
+        <th>Publisher</th>
+        <th>Shared Country</th>
+    </tr>
+    {% for row in same_country_books %}
+    <tr>
+        <td>{{ row.book_id }}</td>
+        <td>{{ row.title }}</td>
+        <td>{{ row.author_name }}</td>
+        <td>{{ row.publisher_name }}</td>
+        <td>{{ row.country }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
