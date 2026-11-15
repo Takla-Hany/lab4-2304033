@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+
+        {% block content %}{% endblock %}
+
+        <div style="margin-top: 30px; text-align: center; border-top: 1px solid #cbd5e1; padding-top: 15px;">
+            <a href="/">To-Do App (Lab 2)</a> | <a href="/library">Library System (Lab 3)</a>
+        </div>
+
+    </div>
+</body>
+
+</html>
